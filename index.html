@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Shield UI Demos</title>
+    <link id="themecss" rel="stylesheet" type="text/css" href="//www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+</head>
+<body class="theme-light">
+<div class="row">
+    <div class="barcode" id="codabar"></div>
+    <div class="barcode" id="ean13"></div>
+</div>
+<div class="row">
+    <div class="barcode" id="code128"></div>
+    <div class="barcode" id="postnet"></div>
+</div>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#codabar").shieldBarcode({
+            type: "CODABAR",
+            value: "A40156B"
+        });
+        $("#ean13").shieldBarcode({
+            type: "EAN-13",
+            value: "750103131130",
+            text: {
+                enabled: true
+            }
+        });
+        $("#postnet").shieldBarcode({
+            type: "POSTNET",
+            value: "801221905"
+        });
+        $("#code128").shieldBarcode({
+            type: "CODE-128",
+            value: "SHIELD UI"
+        });
+    });
+</script>
+<style type="text/css" scoped>
+    .barcode
+    {
+        margin: 20px 0 20px 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</body>
+</html>
